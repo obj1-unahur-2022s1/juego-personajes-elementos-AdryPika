@@ -1,0 +1,28 @@
+import cosas.*
+import jugadores.*
+import armas.*
+
+test "Altura castillo" {
+
+	assert.equals(20, castillo.altura())
+}
+
+test "Altura Tipa"{
+	assert.equals(8, tipa.altura())
+}
+
+test "Ahora esta viva"{
+	assert.that(aurora.estaViva())
+}
+
+test "Floki ataca el castillo con ballesta y 10 flechas"{
+	floki.encontrar(castillo)
+	assert.equals( 150-4, castillo.nivelDeDefensa())
+}
+
+test "Luisa"{
+	luisa.jugadorActivo(mario)
+	luisa.jugadorActivo().encontrar(aurora)
+	luisa.jugadorActivo().encontrar(castillo)
+	assert.equals(45, mario.valorRecolectado())
+}
